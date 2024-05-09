@@ -132,7 +132,7 @@ class ScreenSearch extends StatelessWidget {
                                   .weatherByCityName!.weatherConditionCode!)),
                           Center(
                             child: Text(
-                              '${state.weather!.temperature!.celsius!.round()}°C',
+                              '${state.weatherByCityName!.temperature!.celsius!.round()}°C',
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 55,
@@ -141,7 +141,7 @@ class ScreenSearch extends StatelessWidget {
                           ),
                           Center(
                             child: Text(
-                              state.weather!.weatherMain!.toUpperCase(),
+                              state.weatherByCityName!.weatherMain!.toUpperCase(),
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
@@ -153,7 +153,7 @@ class ScreenSearch extends StatelessWidget {
                             child: Text(
                               DateFormat('EEEE dd ●')
                                   .add_jm()
-                                  .format(state.weather!.date!),
+                                  .format(state.weatherByCityName!.date!),
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
