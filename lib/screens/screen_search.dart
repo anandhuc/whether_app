@@ -141,7 +141,8 @@ class ScreenSearch extends StatelessWidget {
                           ),
                           Center(
                             child: Text(
-                              state.weatherByCityName!.weatherMain!.toUpperCase(),
+                              state.weatherByCityName!.weatherMain!
+                                  .toUpperCase(),
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
@@ -177,24 +178,29 @@ class ScreenSearch extends StatelessWidget {
               child: BlocBuilder<WeatherblocBloc, WeatherblocState>(
                 builder: (context, state) {
                   return state.weatherByCityName == null
-                      ? Center(child: Text('Search a place name to\nfetch the weather',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  ),),)
+                      ? Center(
+                          child: Text(
+                            'Search a place name to\nfetch the weather',
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        )
                       : GridView.count(
                           // Two columns in the grid
                           crossAxisCount: 3,
                           // Add spacing between grid items
-                          crossAxisSpacing: 4.0,
-                          mainAxisSpacing: 4.0,
+                          crossAxisSpacing: 2.0,
+                          mainAxisSpacing: 2.0,
                           // Generate 100 widgets with their index displayed
                           children: [
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -202,7 +208,7 @@ class ScreenSearch extends StatelessWidget {
                                     SizedBox(
                                       height:
                                           MediaQuery.of(context).size.height *
-                                              .09,
+                                              .08,
                                       width: MediaQuery.of(context).size.width *
                                           .3,
                                       child: Image.asset(
@@ -230,7 +236,8 @@ class ScreenSearch extends StatelessWidget {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -263,10 +270,11 @@ class ScreenSearch extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            Container(
+                              Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -277,8 +285,7 @@ class ScreenSearch extends StatelessWidget {
                                               .09,
                                       width: MediaQuery.of(context).size.width *
                                           .3,
-                                      child: Image.asset(
-                                          'assets/6.png'),
+                                      child: Image.asset('assets/6.png'),
                                     ),
                                     const SizedBox(
                                       width: 5,
@@ -290,8 +297,11 @@ class ScreenSearch extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      state.weatherByCityName!.tempFeelsLike!.celsius!.round()
-                                          .toString()+'°C',
+                                      state.weatherByCityName!.tempFeelsLike!
+                                              .celsius!
+                                              .round()
+                                              .toString() +
+                                          '°C',
                                       style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -299,10 +309,11 @@ class ScreenSearch extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                               Container(
+                              Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -313,8 +324,8 @@ class ScreenSearch extends StatelessWidget {
                                               .09,
                                       width: MediaQuery.of(context).size.width *
                                           .3,
-                                      child: Image.asset(
-                                          'assets/sun_2904068.png'),
+                                      child:
+                                          Image.asset('assets/sun_2904068.png'),
                                     ),
                                     const SizedBox(
                                       width: 5,
@@ -326,8 +337,10 @@ class ScreenSearch extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      state.weatherByCityName!.tempMax!.celsius!.round()
-                                          .toString()+'°C',
+                                      state.weatherByCityName!.tempMax!.celsius!
+                                              .round()
+                                              .toString() +
+                                          '°C',
                                       style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -335,10 +348,11 @@ class ScreenSearch extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                                Container(
+                              Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -362,8 +376,10 @@ class ScreenSearch extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      state.weatherByCityName!.tempMin!.celsius!.round()
-                                          .toString()+'°C',
+                                      state.weatherByCityName!.tempMin!.celsius!
+                                              .round()
+                                              .toString() +
+                                          '°C',
                                       style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -371,10 +387,11 @@ class ScreenSearch extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                               Container(
+                              Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -385,8 +402,7 @@ class ScreenSearch extends StatelessWidget {
                                               .09,
                                       width: MediaQuery.of(context).size.width *
                                           .3,
-                                      child: Image.asset(
-                                          'assets/11.png'),
+                                      child: Image.asset('assets/11.png'),
                                     ),
                                     const SizedBox(
                                       width: 5,
@@ -397,8 +413,9 @@ class ScreenSearch extends StatelessWidget {
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    Text(DateFormat('hh:mm a').format( state.weatherByCityName!.sunrise!),
-                                     
+                                    Text(
+                                      DateFormat('hh:mm a').format(
+                                          state.weatherByCityName!.sunrise!),
                                       style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -406,11 +423,11 @@ class ScreenSearch extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            
-                             Container(
+                              Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -421,8 +438,7 @@ class ScreenSearch extends StatelessWidget {
                                               .09,
                                       width: MediaQuery.of(context).size.width *
                                           .3,
-                                      child: Image.asset(
-                                          'assets/12.png'),
+                                      child: Image.asset('assets/12.png'),
                                     ),
                                     const SizedBox(
                                       width: 5,
@@ -433,8 +449,9 @@ class ScreenSearch extends StatelessWidget {
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    Text(DateFormat('hh:mm a').format( state.weatherByCityName!.sunset!),
-                                     
+                                    Text(
+                                      DateFormat('hh:mm a').format(
+                                          state.weatherByCityName!.sunset!),
                                       style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -442,10 +459,11 @@ class ScreenSearch extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                               Container(
+                              Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -468,8 +486,10 @@ class ScreenSearch extends StatelessWidget {
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    Text(state.weatherByCityName!.windSpeed
-                                        .toString()+' kmp' ,
+                                    Text(
+                                      state.weatherByCityName!.windSpeed
+                                              .toString() +
+                                          ' kmp',
                                       style: const TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -480,7 +500,8 @@ class ScreenSearch extends StatelessWidget {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: const Color.fromARGB(84, 128, 128, 128),
+                                  color:
+                                      const Color.fromARGB(84, 128, 128, 128),
                                 ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -503,17 +524,24 @@ class ScreenSearch extends StatelessWidget {
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    Text(state.weatherByCityName!.windGust
-                                        .toString()+' kmp' ,
-                                      style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    )
+                                    state.weatherByCityName!.windGust == null
+                                        ? Text(
+                                            0.3.toString() + ' kmp',
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        : Text(
+                                            state.weatherByCityName!.windGust
+                                                    .toString() +
+                                                ' kmp',
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          )
                                   ],
                                 ),
                               ),
-                            
-                              
                             ]);
                 },
               ),
