@@ -17,17 +17,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-BlocProvider<WeatherblocBloc>(create: (context) => WeatherblocBloc()),
+        BlocProvider<WeatherblocBloc>(create: (context) => WeatherblocBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Weather',
         theme: ThemeData(
-        
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home:const MainTabScreen(),
+        home: const MainTabScreen(),
       ),
     );
   }
